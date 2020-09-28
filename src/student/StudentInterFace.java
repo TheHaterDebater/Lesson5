@@ -19,7 +19,7 @@ public class StudentInterFace {
             for (int i = 1; i <= 3; i++) {
                 System.out.format("Enter test score %d for %s ", i, stu1.getName());
                 score = scan.nextInt();
-                stu1.setScore(1, score);
+                stu1.setScore(i, score);
             }
 
             String errormsg = stu1.validateData();
@@ -57,5 +57,12 @@ public class StudentInterFace {
         System.out.println("\n-----------------------\n");
         System.out.format("%s\n", stu1);
         System.out.format("%s\n", stu2);
+        System.out.println("\n-----------------------\n");
+        stu1.getName();
+        stu1.getAverage();
+        stu1.getHighScore();
+        stu2.getName();
+        stu2.getAverage();
+        stu2.getHighScore();
     }
 }
