@@ -58,11 +58,13 @@ public class StudentInterFace {
         System.out.format("%s\n", stu1);
         System.out.format("%s\n", stu2);
         System.out.println("\n-----------------------\n");
-        stu1.getName();
-        stu1.getAverage();
-        stu1.getHighScore();
-        stu2.getName();
-        stu2.getAverage();
-        stu2.getHighScore();
+        if(stu1.getHighScore() >= stu2.getHighScore())
+            System.out.format("%s had the higher score of %d\n", stu1.getName(), stu1.getHighScore());
+        else
+            System.out.format("%s had the higher score of %d\n", stu2.getName(), stu2.getHighScore());
+        if(stu1.getAverage() >= stu2.getAverage())
+            System.out.format("%s had the higher average of %d\n", stu1.getName(), stu1.getAverage());
+        else
+            System.out.format("%s had the higher average of %d", stu2.getName(), stu2.getAverage());
     }
 }
