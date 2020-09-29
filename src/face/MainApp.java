@@ -35,7 +35,7 @@ public class MainApp extends javax.swing.JFrame {
         rface = new javax.swing.JButton();
         cface = new javax.swing.JButton();
         tface = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        iface = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -68,10 +68,10 @@ public class MainApp extends javax.swing.JFrame {
 
         tface.setText("Toggle mood");
 
-        jButton2.setText("Set initial face");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        iface.setText("Set initial face");
+        iface.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ifaceActionPerformed(evt);
             }
         });
 
@@ -92,7 +92,7 @@ public class MainApp extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tface)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(iface, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -107,7 +107,7 @@ public class MainApp extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(facePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(iface)
                 .addContainerGap())
         );
 
@@ -122,15 +122,15 @@ public class MainApp extends javax.swing.JFrame {
         f.draw();
     }//GEN-LAST:event_mfaceActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        mface.setEnabled();
-        cface.setEnabled();
-        mface.setEnabled();
-        rface.setEnabled();
+    private void ifaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ifaceActionPerformed
+        mface.setEnabled(true);
+        cface.setEnabled(true);
+        tface.setEnabled(true);
+        rface.setEnabled(true);
         f.erase();
         f = new Face(facePanel.getGraphics(), 50, 50);
         f.draw();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_ifaceActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,8 +170,8 @@ public class MainApp extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cface;
     private javax.swing.JPanel facePanel;
+    private javax.swing.JButton iface;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton mface;
     private javax.swing.JButton rface;
     private javax.swing.JButton tface;
