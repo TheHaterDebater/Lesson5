@@ -107,16 +107,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Resize face"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rfaceActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="cface">
       <Properties>
         <Property name="text" type="java.lang.String" value="Change color"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cfaceActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="tface">
       <Properties>
         <Property name="text" type="java.lang.String" value="Toggle mood"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfaceActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="iface">
       <Properties>

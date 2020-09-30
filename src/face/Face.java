@@ -7,6 +7,7 @@ public class Face {
     private int xpos, ypos, diameter;
     private Color color;
     private Graphics g;
+    private boolean ishappy;
     
     public Face(Graphics g, int x, int y){
         xpos = x;
@@ -14,6 +15,7 @@ public class Face {
         this.g = g;
         diameter = 100;
         color = Color.red;
+        ishappy = true;
     }
     
     public void draw(){
@@ -34,15 +36,33 @@ public class Face {
     private void drawMouth(){
         int mx, my;
         mx = xpos + (int)(.3 * diameter);
-        my = xpos + (int)(.8 * diameter);
+        my = xpos + (int)(.7 * diameter);
         g.setColor(Color.black);
         g.drawLine(mx, my, mx + (int)(0.4 * diameter), my);
+        if(ishappy == true){
+            g.drawLine(mx - 10, my - 10, mx + (int)(0.4 * diameter) - 40, my);
+            g.drawLine(mx + 50, my - 10, mx + (int)(0.4 * diameter), my);
+        }
+        else{
+            g.drawLine(mx - 10, my + 10, mx + (int)(0.4 * diameter) - 40, my);
+            g.drawLine(mx + 50, my + 10, mx + (int)(0.4 * diameter), my);
+        }
+    }
+    public void toggleMood(){
+        ishappy = !ishappy;
     }
     public void erase(){
         g.setColor(Color.white);
         g.fillRect(xpos - 10, ypos - 10, diameter + 20, diameter + 20);
     }
-    public void move(){
-        
+    public void move(int newx, int newy){
+        xpos = newx;
+        ypos = newy;
+    }
+    public void resize(int newsize){
+        diameter = newsize;
+    }
+    public void color(Color newcolor){
+        color = newcolor;
     }
 }

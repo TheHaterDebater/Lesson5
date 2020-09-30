@@ -5,6 +5,8 @@
  */
 package face;
 
+import java.awt.Color;
+import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 
 /**
@@ -63,10 +65,25 @@ public class MainApp extends javax.swing.JFrame {
         });
 
         rface.setText("Resize face");
+        rface.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rfaceActionPerformed(evt);
+            }
+        });
 
         cface.setText("Change color");
+        cface.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cfaceActionPerformed(evt);
+            }
+        });
 
         tface.setText("Toggle mood");
+        tface.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfaceActionPerformed(evt);
+            }
+        });
 
         iface.setText("Set initial face");
         iface.addActionListener(new java.awt.event.ActionListener() {
@@ -131,6 +148,26 @@ public class MainApp extends javax.swing.JFrame {
         f = new Face(facePanel.getGraphics(), 50, 50);
         f.draw();
     }//GEN-LAST:event_ifaceActionPerformed
+
+    private void rfaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rfaceActionPerformed
+        int newsize = Integer.parseInt(JOptionPane.showInputDialog(this, "Enter new size (original is 100)"));
+        f.erase();
+        f.resize(newsize);
+        f.draw();
+    }//GEN-LAST:event_rfaceActionPerformed
+
+    private void cfaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cfaceActionPerformed
+       Color newcolor = JColorChooser.showDialog(this, "Choose new color", Color.red);
+       f.erase();
+       f.color(newcolor);
+       f.draw();
+    }//GEN-LAST:event_cfaceActionPerformed
+
+    private void tfaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfaceActionPerformed
+        f.erase();
+        f.toggleMood();
+        f.draw();
+    }//GEN-LAST:event_tfaceActionPerformed
 
     /**
      * @param args the command line arguments
