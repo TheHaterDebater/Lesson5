@@ -40,12 +40,12 @@ public class Face {
         g.setColor(Color.black);
         g.drawLine(mx, my, mx + (int)(0.4 * diameter), my);
         if(ishappy == true){
-            g.drawLine(mx - 10, my - 10, mx + (int)(0.4 * diameter) - 40, my);
-            g.drawLine(mx + 50, my - 10, mx + (int)(0.4 * diameter), my);
+            g.drawLine(mx, my, mx - (int)(0.1 * diameter), my - (int)(0.1 * diameter));
+            g.drawLine(mx + (int)(0.4 * diameter), my, mx + (int)(0.4 * diameter) + (int)(0.1 * diameter), my - (int)(0.1 * diameter));
         }
         else{
-            g.drawLine(mx - 10, my + 10, mx + (int)(0.4 * diameter) - 40, my);
-            g.drawLine(mx + 50, my + 10, mx + (int)(0.4 * diameter), my);
+            g.drawLine(mx, my, mx - (int)(0.1 * diameter), my + (int)(0.1 * diameter));
+            g.drawLine(mx + (int)(0.4 * diameter), my, mx + (int)(0.5 * diameter), my + (int)(0.1 * diameter));
         }
     }
     public void toggleMood(){
